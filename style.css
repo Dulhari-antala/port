@@ -794,10 +794,43 @@ header nav{
 .poster-design{
     grid-area:poster;
 }
+/* =====================================
+            WORK SECTION
+===================================== */
 
-/*==========================
-        CARD
-===========================*/
+.work{
+    padding:100px 0;
+}
+
+.work .section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+/* GRID */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    grid-template-areas:
+        "banner banner"
+        "logo brochure"
+        "business brochure"
+        "social poster";
+    gap:25px;
+    align-items:start;
+}
+
+/* AREA */
+
+.banner-design{grid-area:banner;}
+.logo-design{grid-area:logo;}
+.business-design{grid-area:business;}
+.brochure-design{grid-area:brochure;}
+.social-design{grid-area:social;}
+.poster-design{grid-area:poster;}
+
+/* CARD */
 
 .work-item{
     background:#111;
@@ -817,62 +850,70 @@ header nav{
     margin:0;
     padding:18px;
     text-align:center;
-    font-size:22px;
     color:#00f2ff;
+    font-size:22px;
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/*==========================
-        IMAGE
-===========================*/
+/* IMAGE */
 
 .work-image{
     width:100%;
     display:block;
-    object-fit:contain;
     background:#111;
+    object-fit:contain;
+    object-position:center;
     padding:15px;
 }
 
-/*==========================
-      IMAGE SIZE
-===========================*/
+/* CARD HEIGHT */
+
+/* Banner */
 
 .banner-design .work-image{
-    height:260px;
+    height:280px;
 }
+
+/* Logo */
 
 .logo-design .work-image{
-    height:220px;
+    height:230px;
 }
+
+/* Business Card */
 
 .business-design .work-image{
-    height:180px;
+    height:200px;
 }
+
+/* Brochure */
 
 .brochure-design .work-image{
-    height:700px;
+    height:620px;
 }
+
+/* Social */
 
 .social-design .work-image{
-    height:350px;
+    height:340px;
 }
+
+/* Poster */
 
 .poster-design .work-image{
-    height:350px;
+    height:340px;
 }
 
-/*==========================
-      RESPONSIVE
-===========================*/
+/* RESPONSIVE */
 
-@media(max-width:991px){
+@media(max-width:992px){
 
 .work-grid{
 
 grid-template-columns:1fr;
 
 grid-template-areas:
+
 "banner"
 "logo"
 "business"
@@ -889,7 +930,7 @@ grid-template-areas:
 .social-design .work-image,
 .poster-design .work-image{
 
-height:320px;
+height:340px;
 
 }
 
