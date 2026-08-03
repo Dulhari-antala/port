@@ -759,32 +759,71 @@ header nav{
 
 /* ---------- Card ---------- */
 
+/* ==========================
+   WORK SECTION
+========================== */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+        "banner banner"
+        "logo brochure"
+        "social business"
+        "poster poster";
+    gap:30px;
+}
+
+/* Grid Area */
+
+.work-item.banner-design{
+    grid-area:banner;
+}
+
+.work-item.logo-design{
+    grid-area:logo;
+}
+
+.work-item.brochure-design{
+    grid-area:brochure;
+}
+
+.work-item.social-design{
+    grid-area:social;
+}
+
+.work-item.business-design{
+    grid-area:business;
+}
+
+.work-item.poster-design{
+    grid-area:poster;
+}
+
+/* Card */
+
 .work-item{
     background:#111;
-    border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
     overflow:hidden;
-    transition:.35s ease;
-    display:flex;
-    flex-direction:column;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
     border-color:#00eaff;
-    box-shadow:0 15px 40px rgba(0,234,255,.18);
 }
 
 .work-item h3{
+    padding:18px;
     margin:0;
-    padding:16px;
     text-align:center;
     color:#00eaff;
     font-size:22px;
-    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* ---------- Images ---------- */
+/* Images */
 
 .work-image{
     width:100%;
@@ -795,59 +834,33 @@ header nav{
     padding:15px;
 }
 
-/* ========= GRID AREA ========= */
+/* Individual Heights */
 
-.banner{
-    grid-area:banner;
+.banner-design .work-image{
+    height:250px;
 }
 
-.logo{
-    grid-area:logo;
-}
-
-.brochure{
-    grid-area:brochure;
-}
-
-.social{
-    grid-area:social;
-}
-
-.business{
-    grid-area:business;
-}
-
-.poster{
-    grid-area:poster;
-}
-
-/* ========= HEIGHT ========= */
-
-.banner .work-image{
-    height:420px;
-}
-
-.logo .work-image{
-    height:280px;
-}
-
-.brochure .work-image{
-    height:520px;
-}
-
-.social .work-image{
-    height:420px;
-}
-
-.business .work-image{
+.logo-design .work-image{
     height:260px;
 }
 
-.poster .work-image{
-    height:500px;
+.brochure-design .work-image{
+    height:420px;
 }
 
-/* ========= Responsive ========= */
+.social-design .work-image{
+    height:300px;
+}
+
+.business-design .work-image{
+    height:220px;
+}
+
+.poster-design .work-image{
+    height:420px;
+}
+
+/* Responsive */
 
 @media(max-width:992px){
 
@@ -856,7 +869,6 @@ header nav{
 grid-template-columns:1fr;
 
 grid-template-areas:
-
 "banner"
 "logo"
 "brochure"
@@ -866,14 +878,16 @@ grid-template-areas:
 
 }
 
-.banner .work-image,
-.logo .work-image,
-.brochure .work-image,
-.social .work-image,
-.business .work-image,
-.poster .work-image{
+.banner-design .work-image,
+.logo-design .work-image,
+.brochure-design .work-image,
+.social-design .work-image,
+.business-design .work-image,
+.poster-design .work-image{
 
-height:350px;
+height:320px;
+
+}
 
 }
 
