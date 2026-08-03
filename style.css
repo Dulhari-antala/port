@@ -731,7 +731,6 @@ nav {
     justify-content: center;
     gap: 2rem;
 }
-
 /* Work Section */
 
 .work{
@@ -747,108 +746,72 @@ nav {
 /* Grid */
 
 .work-grid{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
     gap:30px;
 }
 
 /* Card */
 
 .work-item{
-
-    width:calc(33.33% - 20px);
-
+    display:flex;
+    flex-direction:column;
     background:rgba(255,255,255,0.03);
-
     border:1px solid rgba(255,255,255,0.08);
-
     border-radius:18px;
-
-    padding:30px;
-
+    overflow:hidden;
     transition:0.3s;
-
+    height:100%;
 }
 
-/* Hover Effect */
+/* Hover */
 
 .work-item:hover{
-
     transform:translateY(-8px);
-
     border-color:#00f2ff;
-
     box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
 
+/* Image */
+
+.work-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
 }
 
 /* Title */
 
 .work-item h3{
-
     font-size:20px;
-
-    margin-bottom:12px;
-
     color:#00f2ff;
-
+    padding:20px 20px 10px;
+    margin:0;
 }
 
-/* Text */
+/* Description */
 
 .work-item p{
-
     font-size:14px;
-
     color:#bdbdbd;
-
     line-height:1.6;
-
+    padding:0 20px 20px;
+    margin:0;
 }
 
 /* Responsive */
 
-@media (max-width:900px){
-
-.work-item{
-
-    width:100%;
-
+@media (max-width:992px){
+    .work-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-}
-.mute-toggle {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-    opacity: 0;
-}
-
-.work-item:hover .mute-toggle {
-    opacity: 1;
-}
-
-.mute-toggle:hover {
-    background: var(--accent);
-    transform: scale(1.1);
-}
-
-.mute-toggle img {
-    width: 20px;
-    height: 20px;
+@media (max-width:768px){
+    .work-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* Contact Grid */
