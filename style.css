@@ -724,146 +724,108 @@ nav {
     transition: var(--transition);
 }
 
-/* ===========================
-   WORK SECTION
-=========================== */
-
-.work{
-    padding:90px 0;
+/* Work Grid */
+.work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
-.work-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-areas:
-    "banner banner"
-    "logo brochure"
-    "social business"
-    "poster poster";
-    gap:30px;
+.work-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    width: calc(50% - 1rem);
 }
 
-/* ---------- Card ---------- */
-
-.work-item{
-    background:#111;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    overflow:hidden;
-    transition:.35s ease;
-    display:flex;
-    flex-direction:column;
+.work-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.work-item:hover{
-    transform:translateY(-8px);
-    border-color:#00eaff;
-    box-shadow:0 15px 40px rgba(0,234,255,.18);
+.work-item:nth-child(3n+1):hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
 }
 
-.work-item h3{
-    margin:0;
-    padding:16px;
-    text-align:center;
-    color:#00eaff;
-    font-size:22px;
-    border-bottom:1px solid rgba(255,255,255,.08);
+.work-item:nth-child(3n+2):hover {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 30px rgba(112, 0, 255, 0.2);
 }
 
-/* ---------- Images ---------- */
-
-.work-image{
-    width:100%;
-    display:block;
-    object-fit:contain;
-    object-position:center;
-    background:#111;
-    padding:15px;
+.work-item:nth-child(3n+3):hover {
+    border-color: var(--accent-tertiary);
+    box-shadow: 0 0 30px rgba(255, 0, 122, 0.2);
 }
 
-/* ========= GRID AREA ========= */
-
-.banner{
-    grid-area:banner;
+.work-item img,
+.work-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.6;
+    will-change: transform, opacity;
 }
 
-.logo{
-    grid-area:logo;
+.work-item:hover img,
+.work-item:hover video {
+    transform: scale(1.1);
 }
 
-.brochure{
-    grid-area:brochure;
+.work-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.social{
-    grid-area:social;
+.work-item:hover .work-overlay {
+    opacity: 1;
 }
 
-.business{
-    grid-area:business;
+.mute-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    opacity: 0;
 }
 
-.poster{
-    grid-area:poster;
+.work-item:hover .mute-toggle {
+    opacity: 1;
 }
 
-/* ========= HEIGHT ========= */
-
-.banner .work-image{
-    height:420px;
+.mute-toggle:hover {
+    background: var(--accent);
+    transform: scale(1.1);
 }
 
-.logo .work-image{
-    height:280px;
+.mute-toggle img {
+    width: 20px;
+    height: 20px;
 }
 
-.brochure .work-image{
-    height:520px;
-}
-
-.social .work-image{
-    height:420px;
-}
-
-.business .work-image{
-    height:260px;
-}
-
-.poster .work-image{
-    height:500px;
-}
-
-/* ========= Responsive ========= */
-
-@media(max-width:992px){
-
-.work-grid{
-
-grid-template-columns:1fr;
-
-grid-template-areas:
-
-"banner"
-"logo"
-"brochure"
-"social"
-"business"
-"poster";
-
-}
-
-.banner .work-image,
-.logo .work-image,
-.brochure .work-image,
-.social .work-image,
-.business .work-image,
-.poster .work-image{
-
-height:350px;
-
-}
-
-}
 /* Contact Grid */
 .contact-grid {
     display: flex;
