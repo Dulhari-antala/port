@@ -734,87 +734,101 @@ nav {
 /* =========================
    WORK SECTION
 ========================= */
-/* =========================
-   WORK SECTION
-========================= */
-
-.work{
-    padding:90px 0;
-}
-
-.work .section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
+/* ===== Portfolio Grid ===== */
 
 .work-grid{
     display:grid;
-    grid-template-columns:repeat(3,minmax(320px,1fr));
-    gap:35px;
-    align-items:start;
+    grid-template-columns:1fr 2fr;
+    grid-template-rows:260px 260px 260px;
+    gap:25px;
 }
 
+/* Common Card */
+
 .work-item{
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
     overflow:hidden;
-    transition:.35s ease;
-    display:flex;
-    flex-direction:column;
-    position:relative;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#111;
+    transition:.35s;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
-    border-color:var(--accent);
-    box-shadow:0 20px 45px rgba(0,242,255,.18);
+    border-color:#00eaff;
+    box-shadow:0 15px 35px rgba(0,234,255,.2);
 }
 
 .work-item h3{
     margin:0;
-    padding:18px;
+    padding:16px;
     text-align:center;
-    color:var(--accent);
+    color:#00eaff;
     font-size:22px;
-    font-weight:600;
-    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .work-image{
     width:100%;
-    aspect-ratio:4/5;
+    height:calc(100% - 60px);
     object-fit:cover;
     display:block;
-    transition:.4s ease;
-    background:#111;
 }
 
-.work-item:hover .work-image{
-    transform:scale(1.04);
+/* ===== Grid Areas ===== */
+
+.logo{
+    grid-column:1;
+    grid-row:1;
 }
 
-.work-item p{
-    padding:18px;
-    margin:0;
-    color:var(--subtext);
-    line-height:1.7;
-    flex:1;
+.banner{
+    grid-column:2;
+    grid-row:1;
 }
 
-@media (max-width:1100px){
+.brochure{
+    grid-column:1;
+    grid-row:2;
+}
 
-    .work-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.business{
+    grid-column:2;
+    grid-row:2;
+}
+
+.social{
+    grid-column:1;
+    grid-row:3;
+}
+
+.poster{
+    grid-column:2;
+    grid-row:3;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.work-grid{
+
+grid-template-columns:1fr;
+
+grid-template-rows:auto;
 
 }
 
-@media (max-width:768px){
+.logo,
+.banner,
+.brochure,
+.business,
+.social,
+.poster{
 
-    .work-grid{
-        grid-template-columns:1fr;
-    }
+grid-column:auto;
+grid-row:auto;
+
+}
 
 }
 /* Contact Grid */
