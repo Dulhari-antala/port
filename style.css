@@ -724,123 +724,116 @@ nav {
     transition: var(--transition);
 }
 
-/* Work Grid */
-.work-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}/* ========= GRID ========= */
+/* ===========================
+   WORK SECTION
+=========================== */
+
+.work{
+    padding:90px 0;
+}
 
 .work-grid{
     display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:25px;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+    "banner banner"
+    "logo brochure"
+    "social business"
+    "poster poster";
+    gap:30px;
 }
 
-/* ========= COMMON CARD ========= */
+/* ---------- Card ---------- */
 
 .work-item{
     background:#111;
     border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
+    border-radius:20px;
     overflow:hidden;
+    transition:.35s ease;
     display:flex;
     flex-direction:column;
-    transition:.35s;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
-    border-color:#00f2ff;
-    box-shadow:0 15px 35px rgba(0,242,255,.15);
+    border-color:#00eaff;
+    box-shadow:0 15px 40px rgba(0,234,255,.18);
 }
 
 .work-item h3{
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     margin:0;
-    color:#00f2ff;
+    padding:16px;
+    text-align:center;
+    color:#00eaff;
     font-size:22px;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
+
+/* ---------- Images ---------- */
 
 .work-image{
     width:100%;
     display:block;
     object-fit:contain;
+    object-position:center;
     background:#111;
-    padding:10px;
+    padding:15px;
 }
 
-/* ===== LOGO ===== */
+/* ========= GRID AREA ========= */
+
+.banner{
+    grid-area:banner;
+}
 
 .logo{
-    grid-column:1;
-    grid-row:1;
+    grid-area:logo;
+}
+
+.brochure{
+    grid-area:brochure;
+}
+
+.social{
+    grid-area:social;
+}
+
+.business{
+    grid-area:business;
+}
+
+.poster{
+    grid-area:poster;
+}
+
+/* ========= HEIGHT ========= */
+
+.banner .work-image{
+    height:420px;
 }
 
 .logo .work-image{
-    height:180px;
-}
-
-/* ===== BANNER ===== */
-
-.banner{
-    grid-column:2;
-    grid-row:1;
-}
-
-.banner .work-image{
-    height:180px;
-}
-
-/* ===== BROCHURE ===== */
-
-.brochure{
-    grid-column:1;
-    grid-row:2;
+    height:280px;
 }
 
 .brochure .work-image{
-    height:430px;
-}
-
-/* ===== BUSINESS CARD ===== */
-
-.business{
-    grid-column:2;
-    grid-row:2;
-}
-
-.business .work-image{
-    height:220px;
-}
-
-/* ===== SOCIAL ===== */
-
-.social{
-    grid-column:1;
-    grid-row:3;
+    height:520px;
 }
 
 .social .work-image{
-    height:380px;
+    height:420px;
 }
 
-/* ===== POSTER ===== */
-
-.poster{
-    grid-column:2;
-    grid-row:3;
+.business .work-image{
+    height:260px;
 }
 
 .poster .work-image{
-    height:380px;
+    height:500px;
 }
 
-/* ========= RESPONSIVE ========= */
+/* ========= Responsive ========= */
 
 @media(max-width:992px){
 
@@ -848,28 +841,25 @@ nav {
 
 grid-template-columns:1fr;
 
-}
+grid-template-areas:
 
-.logo,
-.banner,
-.business,
-.brochure,
-.social,
-.poster{
-
-grid-column:auto;
-grid-row:auto;
+"banner"
+"logo"
+"brochure"
+"social"
+"business"
+"poster";
 
 }
 
-.logo .work-image,
 .banner .work-image,
-.business .work-image,
+.logo .work-image,
 .brochure .work-image,
 .social .work-image,
+.business .work-image,
 .poster .work-image{
 
-height:320px;
+height:350px;
 
 }
 
