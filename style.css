@@ -730,122 +730,114 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-}
-/* =========================
-   WORK SECTION
-========================= */
-/* ===========================
-   WORK SECTION
-=========================== */
-
-.work{
-    padding:90px 0;
-}
+}/* ========= GRID ========= */
 
 .work-grid{
     display:grid;
     grid-template-columns:1fr 2fr;
-    gap:30px;
+    gap:25px;
 }
 
-/* Card */
+/* ========= COMMON CARD ========= */
 
 .work-item{
     background:#111;
     border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
-    transition:.35s ease;
     display:flex;
     flex-direction:column;
+    transition:.35s;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
-    border-color:#00eaff;
-    box-shadow:0 20px 40px rgba(0,234,255,.15);
+    border-color:#00f2ff;
+    box-shadow:0 15px 35px rgba(0,242,255,.15);
 }
-
-/* Title */
 
 .work-item h3{
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     margin:0;
-    padding:18px;
+    color:#00f2ff;
     font-size:22px;
-    text-align:center;
-    color:#00eaff;
-    background:#111;
-    border-bottom:1px solid rgba(255,255,255,.08);
 }
-
-/* Image */
 
 .work-image{
     width:100%;
-    flex:1;
-    object-fit:contain;      /* IMAGE CUT NA THAY */
-    object-position:center;
     display:block;
+    object-fit:contain;
     background:#111;
-    padding:15px;
+    padding:10px;
 }
 
-/* ========= CARD SIZE ========= */
-
-.logo{
-    height:450px;
-}
-
-.banner{
-    height:450px;
-}
-
-.business{
-    height:520px;
-}
-
-.brochure{
-    height:520px;
-}
-
-.social{
-    height:500px;
-}
-
-.poster{
-    height:500px;
-}
-
-/* ========= GRID POSITION ========= */
+/* ===== LOGO ===== */
 
 .logo{
     grid-column:1;
     grid-row:1;
 }
 
+.logo .work-image{
+    height:180px;
+}
+
+/* ===== BANNER ===== */
+
 .banner{
     grid-column:2;
     grid-row:1;
 }
 
-.business{
-    grid-column:2;
-    grid-row:2;
+.banner .work-image{
+    height:180px;
 }
+
+/* ===== BROCHURE ===== */
 
 .brochure{
     grid-column:1;
     grid-row:2;
 }
 
+.brochure .work-image{
+    height:430px;
+}
+
+/* ===== BUSINESS CARD ===== */
+
+.business{
+    grid-column:2;
+    grid-row:2;
+}
+
+.business .work-image{
+    height:220px;
+}
+
+/* ===== SOCIAL ===== */
+
 .social{
     grid-column:1;
     grid-row:3;
 }
 
+.social .work-image{
+    height:380px;
+}
+
+/* ===== POSTER ===== */
+
 .poster{
     grid-column:2;
     grid-row:3;
+}
+
+.poster .work-image{
+    height:380px;
 }
 
 /* ========= RESPONSIVE ========= */
@@ -867,22 +859,17 @@ grid-template-columns:1fr;
 
 grid-column:auto;
 grid-row:auto;
-height:450px;
 
 }
 
-}
+.logo .work-image,
+.banner .work-image,
+.business .work-image,
+.brochure .work-image,
+.social .work-image,
+.poster .work-image{
 
-@media(max-width:768px){
-
-.logo,
-.banner,
-.business,
-.brochure,
-.social,
-.poster{
-
-height:400px;
+height:320px;
 
 }
 
