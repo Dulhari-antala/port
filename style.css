@@ -738,9 +738,9 @@ header nav{
 }
 
 /* Work Grid */
-/* ===================================
-            WORK SECTION
-=================================== */
+/*==========================
+        WORK SECTION
+===========================*/
 
 .work{
     padding:90px 0;
@@ -751,20 +751,25 @@ header nav{
     margin-bottom:50px;
 }
 
-/* GRID */
+/*==========================
+        GRID
+===========================*/
 
 .work-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:320px 1fr;
     grid-template-areas:
         "banner banner"
         "logo brochure"
-        "social business"
-        "poster poster";
-    gap:30px;
+        "business brochure"
+        "social poster";
+    gap:25px;
+    align-items:start;
 }
 
-/* GRID POSITION */
+/*==========================
+      GRID AREA
+===========================*/
 
 .banner-design{
     grid-area:banner;
@@ -778,209 +783,90 @@ header nav{
     grid-area:brochure;
 }
 
-.social-design{
-    grid-area:social;
-}
-
 .business-design{
     grid-area:business;
+}
+
+.social-design{
+    grid-area:social;
 }
 
 .poster-design{
     grid-area:poster;
 }
 
-/* CARD */
+/*==========================
+        CARD
+===========================*/
 
 .work-item{
     background:#111;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
     overflow:hidden;
-    transition:.35s ease;
-    display:flex;
-    flex-direction:column;
-}
-
-.work-item:hover{
-    transform:translateY(-8px);
-    border-color:#00eaff;
-    box-shadow:0 20px 40px rgba(0,234,255,.18);
-}
-
-/* TITLE */
-
-.work-item h3{
-    margin:0;
-    padding:18px;
-    font-size:22px;
-    color:#00eaff;
-    text-align:center;
-    background:#111;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-/* IMAGE */
-
-.work-image{
-    width:100%;
-    display:block;
-    object-fit:contain;
-    object-position:center;
-    background:#111;
-    padding:15px;
-}
-
-/* ==========================
-      IMAGE HEIGHTS
-========================== */
-
-.banner-design .work-image{
-    height:340px;
-}
-
-.logo-design .work-image{
-    height:280px;
-}
-
-.brochure-design .work-image{
-    height:500px;
-}
-
-.social-design .work-image{
-    height:420px;
-}
-
-.business-design .work-image{
-    height:260px;
-}
-
-.poster-design .work-image{
-    height:500px;
-}
-
-/* ==========================
-        RESPONSIVE
-========================== */
-
-@media(max-width:992px){
-
-.work-grid{
-
-grid-template-columns:1fr;
-
-grid-template-areas:
-"banner"
-"logo"
-"brochure"
-"social"
-"business"
-"poster";
-
-}
-
-.banner-design .work-image,
-.logo-design .work-image,
-.brochure-design .work-image,
-.social-design .work-image,
-.business-design .work-image,
-.poster-design .work-image{
-
-height:340px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.work{
-padding:70px 0;
-}
-
-.work-grid{
-gap:20px;
-}
-
-.work-item h3{
-font-size:20px;
-}
-
-.banner-design .work-image,
-.logo-design .work-image,
-.brochure-design .work-image,
-.social-design .work-image,
-.business-design .work-image,
-.poster-design .work-image{
-
-height:260px;
-
-}
-
-}
-/* Card */
-
-.work-item{
-    background:#111;
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
     transition:.35s;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
-    border-color:#00eaff;
+    border-color:#00f2ff;
+    box-shadow:0 15px 40px rgba(0,242,255,.18);
 }
 
 .work-item h3{
-    padding:18px;
     margin:0;
+    padding:18px;
     text-align:center;
-    color:#00eaff;
     font-size:22px;
+    color:#00f2ff;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* Images */
+/*==========================
+        IMAGE
+===========================*/
 
 .work-image{
     width:100%;
     display:block;
     object-fit:contain;
-    object-position:center;
     background:#111;
     padding:15px;
 }
 
-/* Individual Heights */
+/*==========================
+      IMAGE SIZE
+===========================*/
 
 .banner-design .work-image{
-    height:250px;
-}
-
-.logo-design .work-image{
     height:260px;
 }
 
-.brochure-design .work-image{
-    height:420px;
-}
-
-.social-design .work-image{
-    height:300px;
-}
-
-.business-design .work-image{
+.logo-design .work-image{
     height:220px;
 }
 
-.poster-design .work-image{
-    height:420px;
+.business-design .work-image{
+    height:180px;
 }
 
-/* Responsive */
+.brochure-design .work-image{
+    height:700px;
+}
 
-@media(max-width:992px){
+.social-design .work-image{
+    height:350px;
+}
+
+.poster-design .work-image{
+    height:350px;
+}
+
+/*==========================
+      RESPONSIVE
+===========================*/
+
+@media(max-width:991px){
 
 .work-grid{
 
@@ -989,18 +875,18 @@ grid-template-columns:1fr;
 grid-template-areas:
 "banner"
 "logo"
+"business"
 "brochure"
 "social"
-"business"
 "poster";
 
 }
 
 .banner-design .work-image,
 .logo-design .work-image,
+.business-design .work-image,
 .brochure-design .work-image,
 .social-design .work-image,
-.business-design .work-image,
 .poster-design .work-image{
 
 height:320px;
@@ -1008,7 +894,6 @@ height:320px;
 }
 
 }
-
 }/* Contact Grid */
 .contact-grid {
     display: flex;
