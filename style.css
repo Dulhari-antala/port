@@ -738,30 +738,20 @@ header nav{
 }
 
 /* Work Grid */
-/* ===========================
-   WORK SECTION
-=========================== */
+/* ===================================
+            WORK SECTION
+=================================== */
 
 .work{
     padding:90px 0;
 }
 
-.work-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-areas:
-    "banner banner"
-    "logo brochure"
-    "social business"
-    "poster poster";
-    gap:30px;
+.work .section-title{
+    text-align:center;
+    margin-bottom:50px;
 }
 
-/* ---------- Card ---------- */
-
-/* ==========================
-   WORK SECTION
-========================== */
+/* GRID */
 
 .work-grid{
     display:grid;
@@ -774,32 +764,160 @@ header nav{
     gap:30px;
 }
 
-/* Grid Area */
+/* GRID POSITION */
 
-.work-item.banner-design{
+.banner-design{
     grid-area:banner;
 }
 
-.work-item.logo-design{
+.logo-design{
     grid-area:logo;
 }
 
-.work-item.brochure-design{
+.brochure-design{
     grid-area:brochure;
 }
 
-.work-item.social-design{
+.social-design{
     grid-area:social;
 }
 
-.work-item.business-design{
+.business-design{
     grid-area:business;
 }
 
-.work-item.poster-design{
+.poster-design{
     grid-area:poster;
 }
 
+/* CARD */
+
+.work-item{
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.work-item:hover{
+    transform:translateY(-8px);
+    border-color:#00eaff;
+    box-shadow:0 20px 40px rgba(0,234,255,.18);
+}
+
+/* TITLE */
+
+.work-item h3{
+    margin:0;
+    padding:18px;
+    font-size:22px;
+    color:#00eaff;
+    text-align:center;
+    background:#111;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* IMAGE */
+
+.work-image{
+    width:100%;
+    display:block;
+    object-fit:contain;
+    object-position:center;
+    background:#111;
+    padding:15px;
+}
+
+/* ==========================
+      IMAGE HEIGHTS
+========================== */
+
+.banner-design .work-image{
+    height:340px;
+}
+
+.logo-design .work-image{
+    height:280px;
+}
+
+.brochure-design .work-image{
+    height:500px;
+}
+
+.social-design .work-image{
+    height:420px;
+}
+
+.business-design .work-image{
+    height:260px;
+}
+
+.poster-design .work-image{
+    height:500px;
+}
+
+/* ==========================
+        RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+.work-grid{
+
+grid-template-columns:1fr;
+
+grid-template-areas:
+"banner"
+"logo"
+"brochure"
+"social"
+"business"
+"poster";
+
+}
+
+.banner-design .work-image,
+.logo-design .work-image,
+.brochure-design .work-image,
+.social-design .work-image,
+.business-design .work-image,
+.poster-design .work-image{
+
+height:340px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.work{
+padding:70px 0;
+}
+
+.work-grid{
+gap:20px;
+}
+
+.work-item h3{
+font-size:20px;
+}
+
+.banner-design .work-image,
+.logo-design .work-image,
+.brochure-design .work-image,
+.social-design .work-image,
+.business-design .work-image,
+.poster-design .work-image{
+
+height:260px;
+
+}
+
+}
 /* Card */
 
 .work-item{
