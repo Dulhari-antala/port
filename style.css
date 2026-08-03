@@ -734,47 +734,89 @@ nav {
 /* =========================
    WORK SECTION
 ========================= */
-/* ===== Portfolio Grid ===== */
+/* ===========================
+   WORK SECTION
+=========================== */
+
+.work{
+    padding:90px 0;
+}
 
 .work-grid{
     display:grid;
     grid-template-columns:1fr 2fr;
-    grid-template-rows:260px 260px 260px;
-    gap:25px;
+    gap:30px;
 }
 
-/* Common Card */
+/* Card */
 
 .work-item{
-    overflow:hidden;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,.08);
     background:#111;
-    transition:.35s;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s ease;
+    display:flex;
+    flex-direction:column;
 }
 
 .work-item:hover{
     transform:translateY(-8px);
     border-color:#00eaff;
-    box-shadow:0 15px 35px rgba(0,234,255,.2);
+    box-shadow:0 20px 40px rgba(0,234,255,.15);
 }
+
+/* Title */
 
 .work-item h3{
     margin:0;
-    padding:16px;
+    padding:18px;
+    font-size:22px;
     text-align:center;
     color:#00eaff;
-    font-size:22px;
+    background:#111;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
+
+/* Image */
 
 .work-image{
     width:100%;
-    height:calc(100% - 60px);
-    object-fit:cover;
+    flex:1;
+    object-fit:contain;      /* IMAGE CUT NA THAY */
+    object-position:center;
     display:block;
+    background:#111;
+    padding:15px;
 }
 
-/* ===== Grid Areas ===== */
+/* ========= CARD SIZE ========= */
+
+.logo{
+    height:450px;
+}
+
+.banner{
+    height:450px;
+}
+
+.business{
+    height:520px;
+}
+
+.brochure{
+    height:520px;
+}
+
+.social{
+    height:500px;
+}
+
+.poster{
+    height:500px;
+}
+
+/* ========= GRID POSITION ========= */
 
 .logo{
     grid-column:1;
@@ -786,13 +828,13 @@ nav {
     grid-row:1;
 }
 
-.brochure{
-    grid-column:1;
+.business{
+    grid-column:2;
     grid-row:2;
 }
 
-.business{
-    grid-column:2;
+.brochure{
+    grid-column:1;
     grid-row:2;
 }
 
@@ -806,27 +848,41 @@ nav {
     grid-row:3;
 }
 
-/* Responsive */
+/* ========= RESPONSIVE ========= */
 
-@media(max-width:900px){
+@media(max-width:992px){
 
 .work-grid{
 
 grid-template-columns:1fr;
 
-grid-template-rows:auto;
-
 }
 
 .logo,
 .banner,
-.brochure,
 .business,
+.brochure,
 .social,
 .poster{
 
 grid-column:auto;
 grid-row:auto;
+height:450px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.logo,
+.banner,
+.business,
+.brochure,
+.social,
+.poster{
+
+height:400px;
 
 }
 
