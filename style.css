@@ -255,7 +255,7 @@ nav {
 }
 
 .logo img {
-    height: 45px;
+    height: 65px;
     width: auto;
     border-radius: 8px;
     transition: var(--transition);
