@@ -324,8 +324,8 @@ header nav{
 }
 
 .logo img{
-    width:56px;
-    
+    width:66px;
+    height:66px;
     object-fit:contain;
     transition:.35s ease;
 }
